@@ -1,0 +1,20 @@
+//h4 Moves needed: !{moves}
+.your-color
+
+if over
+  h3 Game is over
+  if mode == 'multi'  
+    a(href='/games') Back to games overview
+else
+  if mode == 'multi'
+    if isNextPlayer
+      span It's your turn
+    else
+      span It's your opponent's turn
+
+h5 !{percentage}%
+h5 Moves: !{moves}
+h5 Move time:
+  span.timer !{timer}
+
+p.status
