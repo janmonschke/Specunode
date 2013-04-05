@@ -1,5 +1,5 @@
 Q           = require 'q'
-connection  = require('../db/database_connection').connection.createConnection()
+connection  = require('../config/connection_config').config.createConnection()
 
 class Model
 
@@ -74,4 +74,4 @@ class Model
 
     return deferred
 
-exports.Model = Model
+exports = Model

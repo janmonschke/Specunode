@@ -18,7 +18,7 @@ config.development =
   facebookRedirectURL: ''
 
 # TESTING
-config.testing = 
+config.test = 
   appPort: 3000
   redisPort: 6379
   adminName: ''
@@ -53,4 +53,5 @@ config.production =
 
 # get the node environment from the variable or default to development
 node_env = process.env['NODE_ENV'] or 'development'
+
 exports.config = config[node_env]
