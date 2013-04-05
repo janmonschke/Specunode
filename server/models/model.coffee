@@ -18,10 +18,10 @@ class Model
     @db().get String(id), deferred.makeNodeResolver()
     return deferred.promise
 
-  edit: (id, doc, done) ->
+  edit: (id, doc) ->
     deferred = Q.defer()
-    db.save id, doc._rev, doc, (err, res) =>
-      return done(err) if err 
+    @db().save id, doc._rev, doc, (err, res) =>
+      return deferred.reject(err) if err 
       
       doc._rev = res.rev
 
@@ -74,4 +74,4 @@ class Model
 
     return deferred
 
-exports = Model
+module.exports = Model
